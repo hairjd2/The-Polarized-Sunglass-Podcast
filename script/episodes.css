@@ -1,0 +1,129 @@
+.audio-player {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+  margin-top: 30px;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 500px;
+  height: 500px;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  margin-top: 30px;
+  margin: 0 auto
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  /* text-align: center; */
+}
+
+.audio-player:hover .image {
+  opacity: 0.3;
+}
+
+.audio-player:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  width: 25%;
+  padding: 16px 32px;
+}
+
+.audio {
+  display: block;
+  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.player {
+  width: 500px;
+  background-color: #05386B;
+  color: #05386B;
+}
+
+body {
+  background-color: #5CDB95;
+}
+
+.main {
+  top: 130px;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #05386B;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 115px; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #EDF5E1;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #379683;
+  color: #EDF5E1;
+}
+
+/* Main content */
+.main {
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
+
+.title {
+  text-align: center;
+  color: #EDF5E1;
+}
+
+#randomMessage {
+  text-align: center;
+  color: #EDF5E1;
+}
+
+#bannerpic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #8EE4AF;
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 5px;
+}
+
+.player-and-comments {
+  top: 300px;
+  display: flex;
+}

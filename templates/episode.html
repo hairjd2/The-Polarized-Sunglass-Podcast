@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <link rel="stylesheet" href="/static/styles/main.css">
+    <link rel="stylesheet" href="/static/styles/episodes.css">
+    <link rel="icon" href="/static/src/Podpfp.png">
+    <title>{{episode}}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static',filename='script/main.js') }}" charset="utf-8"></script>                                                                   
+    <script> 
+	var episode = "";
+	var number = -1;
+	var podcast = {};
+	episode = "{{episode}}";
+	var episodeLiteral = episode.split(".")[0];
+	let reg = /([1-9][0-9]*)/
+	number = episodeLiteral.match(reg)[0];
+	function upperFirst(input) {
+		return input.replace(/\b\w/g, input => input.toUpperCase());
+	}
+	function getInfo(callback) {
+		$.get({
+			url: "/stats",
+	                success: callback.bind(this),
+			error: function(XMLHttpRequest, textStatus, err) {
+			     alert(textStatus + " .. " + err);
+			},
+		});
+	}
+	var info = getInfo((data) => {
+		console.log(number);
+		var podcast = data.episodes[number - 1];
+		var title = podcast.title;
+		document.title = title;	
+		document.getElementById("full-title").innerHTML = podcast.title;
+		document.getElementById("audioPlayer").src = "../static/src/" + upperFirst(episodeLiteral) + ".mp3";
+		document.getElementById("stats").innerHTML = "Episode " + number + " stats";
+	});
+    </script>
+  </head>
+  <body onload="setup()">
+    <div class="topbar">
+      <div class="column">
+        <a href="/">
+          <img id="bannerpic" src="/static/src/glasses.png" alt="" width="300px">
+        </a>
+      </div>
+      <div class="column">
+        <h2 id="randomMessage">This is a random message!</h2>
+      </div>
+    </div>
+      <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/episodes/episode1.html">Episode 1</a>
+        <a href="/episodes/episode2.html">Episode 2</a>
+        <a href="/episodes/episode3.html">Episode 3</a>
+        <a href="/episodes/episode4.html">Episode 4</a>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="player-and-comments">
+        <div class="column">
+            <div class="audio-player">
+              <div class="title">
+                <h1 id="full-title">Episode _: __</h1>
+              </div>
+              <img src="../static/src/Episode1.png" alt="Avatar" id="image" class="image">
+              <div class="middle">
+                <div class="text">
+                  <button type="button" id="playone" name="button" onclick="playit()">
+                    <img src="/static/src/play.png" id="playbutton" alt="">
+                  </button>
+                </div>
+              </div>
+              <div class="audio">
+                <audio id="audioPlayer" controls src="../static/src/Episode1.mp3" onclick="playit()" class="player"></audio>
+              </div>
+              <div class="plays">
+                <p id="stats">Episode _ Stats</p>
+              </div>
+            </div>
+          </div>
+        <div id="comments" class="column">
+            <div class="audio-player">
+              <div class="title">
+                <h1>Comments coming soon!</h1>
+              </div>
+            </div>
+        </div>
+      </div>
+  </body>
+</html>

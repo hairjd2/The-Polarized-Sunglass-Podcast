@@ -1,0 +1,29 @@
+{
+	"episodes": [
+		{
+			"title": "Episode 1: Pilot",
+			"likes": 4,
+			"plays": 16
+		},
+		{
+			"title": "Episode 2: WTF! New Social Media?",
+			"likes": 3,
+			"plays": 8
+		},
+   	        {
+			"title": "Episode 3: Virtual Competitions and Computer Terms",
+			"likes": 3,
+			"plays": 8
+		},
+		{
+			"title": "Episode 4: Misconceptions of Taekwondo and New Stuff From WWDC",
+			"likes": 5,
+			"plays": 4
+		},
+		{
+			"title": "Episode 5: Top 5 Martial Arts and the History of Computers",
+			"likes": 2,
+			"plays": 2
+		}
+	]
+}

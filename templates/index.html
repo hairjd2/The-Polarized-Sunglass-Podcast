@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <link rel="icon" href="/static/src/glasses.png">
+  <title>The Polarized Sunglass Podcast</title>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="{{ url_for('static',filename='script/main.js') }}" charset="utf-8"></script>
+</head>
+<body onload="setup()">
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="main">
+  <div class="audio-player">
+    <div class="title">
+      <a href="/episodes/episode1.html" class="episodelink">
+        <h1>Episode 1: Pilot</h1>
+      </a>
+    </div>
+    <img src="/static/src/Episode1.png" alt="Avatar" class="image">
+      <div class="middle">
+        <div class="text">
+          <button type="button" id="playtwo" name="button" onclick="playit('Episode1', 'imagetwo')">
+            <img src="/static/src/play.png" id="imagetwo" alt="">
+          </button>
+        </div>
+      </div>
+    <div class="audio">
+      <audio id="Episode1" controls src="/static/src/Episode1.mp3" onclick="playit('Episode1', 'imagetwo')" class="player"></audio>
+    </div>
+    <div class="plays">
+      <p id="Episode1plays">Episode 1 Stats</p>
+    </div>
+    <div class="likes">
+      <!-- <button type="button" name="button" id="twolike" onclick="like('twolike')">
+        <img src="src/thumbs.png" alt="">
+      </button> -->
+    </div>
+  </div>
+  <div class="audio-player">
+    <div class="title">
+      <a href="/episodes/episode2.html" class="episodelink">
+        <h1>Episode 2: WTF! New Social Media?</h1>
+      </a>
+    </div>
+    <img src="/static/src/Episode2.png" alt="Avatar" class="image">
+    <div class="middle">
+      <div class="text">
+        <button type="button" id="playtwo" name="button" onclick="playit('Episode2', 'imagetwo')">
+          <img src="/static/src/play.png" id="imagetwo" alt="">
+        </button>
+      </div>
+    </div>
+    <div class="audio">
+      <audio id="Episode2" controls src="static/src/Episode2.mp3" class="player"></audio>
+    </div>
+    <div class="plays">
+      <p id="Episode2plays">Episode 2 Stats</p>
+    </div>
+  </div>
+  <div class="audio-player">
+    <div class="title">
+      <a href="episodes/episode3.html" class="episodelink">
+        <h1>Episode 3: Virtual Competitions and Computer Terms</h1>
+      </a>
+    </div>
+    <img src="/static/src/Episode3.png" alt="Avatar" class="image">
+    <div class="middle">
+      <div class="text">
+        <button type="button" id="playtwo" name="button" onclick="playit('Episode3', 'imagethree')">
+          <img src="/static/src/play.png" id="imagethree" alt="">
+        </button>
+      </div>
+    </div>
+    <div class="audio">
+      <audio id="Episode3" controls src="/static/src/Episode3.mp3" class="player"></audio>
+    </div>
+    <div class="plays">
+      <p id="Episode3plays">Episode 3 Stats</p>
+    </div>
+  </div>
+  <div class="audio-player">
+    <div class="title">
+      <a href="/episodes/episode4.html" class="episodelink">
+        <h1>Episode 4: Misconceptions of Taekwondo and New Stuff from WWDC</h1>
+      </a>
+    </div>
+    <img src="/static/src/Episode4.png" alt="Avatar" class="image">
+    <div class="middle">
+      <div class="text">
+        <button type="button" id="playtwo" name="button" onclick="playit('Episode4', 'imagefour')">
+          <img src="/static/src/play.png" id="imagefour" alt="">
+        </button>
+      </div>
+    </div>
+    <div class="audio">
+      <audio id="Episode4" controls src="/static/src/Episode4.mp3" class="player"></audio>
+    </div>
+    <div class="plays">
+      <p id="Episode4plays">Episode 4 Stats</p>
+    </div>
+  </div>
+</div>
+  <div class="topbar">
+    <div class="column">
+      <a href="/">
+        <img id="bannerpic" src="/static/src/glasses.png" alt="" width="300px">
+      </a>
+    </div>
+    <div class="column">
+      <h2 id="randomMessage">This is a random message!</h2>
+    </div>
+  </div>
+    <div class="navbar">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/episodes/episode1.html">Episode 1</a>
+      <a href="/episodes/episode2.html">Episode 2</a>
+      <a href="/episodes/episode3.html">Episode 3</a>
+      <a href="/episodes/episode4.html">Episode 4</a>
+    </div>
+</body>
+</html>

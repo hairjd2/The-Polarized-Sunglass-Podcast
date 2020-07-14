@@ -45,9 +45,9 @@ function randomMessage() {
       case 3:
         messag.innerHTML = "Where crayons are pronounced crayon and we always stick it to the man!";
         break;
-      case 4:
-        messag.innerHTML = "Where we don’t steal and the batmobile lost a wheel!";
-        break;
+      // case 4:
+      //   messag.innerHTML = "Where we don’t steal and the batmobile lost a wheel!";
+      //   break;
       // case 5:
       //   messag.innerHTML = "Where we record on discord and I broke my motherboard!";
       //   break;
